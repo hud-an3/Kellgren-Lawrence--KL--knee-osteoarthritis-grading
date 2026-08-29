@@ -8,9 +8,9 @@ import matplotlib.pyplot as plt
 from eda import preprocess_gray, load_dataset   
 
 
-Test_data = r"C:\Users\DELL\Desktop\ML semester Project\KneeXrayData\ClsKLData\kneeKL224\test"
-Train_data = r"C:\Users\DELL\Desktop\ML semester Project\KneeXrayData\ClsKLData\kneeKL224\train"
-Val_data= r"C:\Users\DELL\Desktop\ML semester Project\KneeXrayData\ClsKLData\kneeKL224\val"
+Test_data = r"C:\Project\KneeXrayData\ClsKLData\kneeKL224\test"
+Train_data = r"C:\Project\KneeXrayData\ClsKLData\kneeKL224\train"
+Val_data= r"C:\Project\KneeXrayData\ClsKLData\kneeKL224\val"
 
 # Load dataset
 X_train_paths, y_train, classes = load_dataset(Train_data)
