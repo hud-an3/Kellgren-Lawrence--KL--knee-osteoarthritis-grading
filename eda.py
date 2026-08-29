@@ -5,9 +5,9 @@ from PIL import Image, ImageEnhance, ImageOps
 from collections import Counter
 
 # Dataset paths
-Test_data  = r"C:\Users\DELL\Desktop\ML semester Project\KneeXrayData\ClsKLData\kneeKL224\test"
-Train_data = r"C:\Users\DELL\Desktop\ML semester Project\KneeXrayData\ClsKLData\kneeKL224\train"
-Val_data   = r"C:\Users\DELL\Desktop\ML semester Project\KneeXrayData\ClsKLData\kneeKL224\val"
+Test_data  = r"C:\Project\KneeXrayData\ClsKLData\kneeKL224\test"
+Train_data = r"C:\Project\KneeXrayData\ClsKLData\kneeKL224\train"
+Val_data   = r"C:\Project\KneeXrayData\ClsKLData\kneeKL224\val"
 
 
 def load_dataset(data_path):
