@@ -3,11 +3,12 @@
 # Knee Osteoarthritis Severity Classification (KL Grades)
 
 Automated classification of **Kellgren–Lawrence (KL) grades** for knee osteoarthritis using **classical machine learning and deep learning** on knee X-ray images.
-The project compares handcrafted texture features with transfer-learning–based CNNs, incorporates **ordinal classification**, and evaluates ensemble strategies.
+The project incorporates **ordinal classification**, evaluates ensemble strategies and compares performance of Classical Machine Learning models with Deep Learning. Performance is evaluated using Accuracy, Macro F1-score, and Cohen’s Kappa,
+along with qualitative analysis from confusion matrices.
 
 ---
 
-## 📌 Overview
+##  Overview
 
 Knee osteoarthritis (KOA) is a degenerative joint disease commonly assessed using X-ray imaging and the **Kellgren–Lawrence grading system (KL-0 to KL-4)**. Manual grading is subjective and inconsistent across observers.
 
@@ -20,7 +21,7 @@ This project investigates automated KL grade classification by:
 
 ---
 
-## 🗂 Dataset
+##  Dataset
 
 * **Source:** Mendeley Knee X-ray Dataset
 * **Subset:** `ClsKLData`
@@ -29,10 +30,33 @@ This project investigates automated KL grade classification by:
 * **Splits:** Train / Validation / Test
 
 The dataset exhibits **class imbalance**, with mild and moderate grades occurring more frequently.
+<img width="1561" height="1156" alt="{FC85AD4E-1170-41F8-AB6D-9E31F32EA082}" src="https://github.com/user-attachments/assets/c050eb85-32ed-4500-9b43-f22a8860a35b" />
+Sample images per class in training dataset: <img width="1116" height="1433" alt="{ACB915AA-EA57-4F93-9801-D6E57322D260}" src="https://github.com/user-attachments/assets/43a6df10-4303-4835-b0cb-2f271fe4459b" />
+
 
 ---
+## Models Compared
 
-## ⚙️ Methodology
+### Classical ML 
+
+- **Feature extraction:** Gray-Level Co-occurrence Matrix (GLCM)
+  - Contrast, Correlation, Energy, Homogeneity
+  - Computed across multiple distances and angles
+- **Classifier:** Random Forest (500 trees)
+- **Class imbalance handling:** `class_weight="balanced"`
+
+### Deep Learning 
+
+1. **ResNet-18** (Transfer Learning)
+   - ImageNet pretrained
+   - End-to-end CNN feature learning
+
+2. **EfficientNet-B0** (Transfer Learning)
+   - ImageNet pretrained
+   - Partial fine-tuning of higher feature blocks
+   - `WeightedRandomSampler` used to address class imbalance
+
+##  Methodology
 
 ### Classical Machine Learning
 
@@ -53,7 +77,7 @@ The dataset exhibits **class imbalance**, with mild and moderate grades occurrin
 
 ### Ensemble Learning
 
-* Probability-level averaging across multiple models
+* Probability-level averaging across the models
 
 ---
 
@@ -67,7 +91,7 @@ The dataset exhibits **class imbalance**, with mild and moderate grades occurrin
 
 ---
 
-## 📊 Evaluation
+## Evaluation
 
 Models are evaluated on a held-out test set using:
 
@@ -77,10 +101,12 @@ Models are evaluated on a held-out test set using:
 * **Confusion Matrix**
 
 Grad-CAM is used to visualize salient regions influencing CNN predictions.
+<img width="1103" height="311" alt="image" src="https://github.com/user-attachments/assets/1ca78030-780a-43a1-8cd4-e415e34c5f89" />
+
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 **Language:**
 
@@ -115,7 +141,7 @@ Grad-CAM is used to visualize salient regions influencing CNN predictions.
 
 ---
 
-## 🚀 Setup & Usage
+## Setup & Usage
 
 ```bash
 # Create virtual environment
@@ -136,16 +162,18 @@ Run the relevant scripts for:
 
 ---
 
-## 📈 Key Findings
+## Key Findings
 
 * Deep learning models significantly outperform classical ML
+* Classical ML with GLCM features is insufficient for capturing complexity of OA severity.
 * ResNet-18 achieves the best overall performance
+* EfficientNet-B0 gives decent performance but requires careful tuning and more data.
 * Ordinal classification improves agreement with true labels
 * Ensemble learning provides stable but marginal gains
 
 ---
 
-## ⚠️ Limitations & Future Work
+## Limitations & Future Work
 
 * Limited dataset size restricts generalization
 * Single-modal imaging (X-ray only)
@@ -156,10 +184,6 @@ Run the relevant scripts for:
   * Attention-based architectures
   * Multimodal medical data
 
----
 
-## 📜 License
-
-This project is intended for **academic and research purposes**.
 
 
