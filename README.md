@@ -33,6 +33,15 @@ The dataset exhibits **class imbalance**, with mild and moderate grades occurrin
 <img width="1561" height="1156" alt="{FC85AD4E-1170-41F8-AB6D-9E31F32EA082}" src="https://github.com/user-attachments/assets/c050eb85-32ed-4500-9b43-f22a8860a35b" />
 Sample images per class in training dataset: <img width="1116" height="1433" alt="{ACB915AA-EA57-4F93-9801-D6E57322D260}" src="https://github.com/user-attachments/assets/43a6df10-4303-4835-b0cb-2f271fe4459b" />
 
+---
+
+## Models
+
+* Random Forest (GLCM features)
+* EfficientNet-B0 (transfer learning)
+* ResNet-18 (transfer learning)
+* Ordinal EfficientNet-B0
+* Probability-based ensemble
 
 ---
 ## Models Compared
@@ -78,16 +87,6 @@ Sample images per class in training dataset: <img width="1116" height="1433" alt
 ### Ensemble Learning
 
 * Probability-level averaging across the models
-
----
-
-## 🧠 Models
-
-* Random Forest (GLCM features)
-* EfficientNet-B0 (transfer learning)
-* ResNet-18 (transfer learning)
-* Ordinal EfficientNet-B0
-* Probability-based ensemble
 
 ---
 
