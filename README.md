@@ -101,6 +101,8 @@ Models are evaluated on a held-out test set using:
 * **Confusion Matrix**
 
 Grad-CAM is used to visualize salient regions influencing CNN predictions.
+<img width="1377" height="1155" alt="{54917C2C-1528-431C-A8E7-31826A987954}" src="https://github.com/user-attachments/assets/cc95214d-3a89-4f30-9a8c-4ba819c22f09" />
+
 <img width="1103" height="311" alt="image" src="https://github.com/user-attachments/assets/1ca78030-780a-43a1-8cd4-e415e34c5f89" />
 
 
